@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    onSignedInInitialize(user.getDisplayName());
+
                 } else {
                     // User is signed out
                     onSignedOutCleanup();
@@ -119,14 +119,6 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private void onSignedInInitialize(String username) {
-        mFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        //TODO setup firebase email verification check
-
-
-        mFirebaseUser.sendEmailVerification();
-    }
 
     private void onSignedOutCleanup() {
     }
